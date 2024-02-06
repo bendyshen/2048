@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <!-- Game Title -->
+    <Label style="-fx-font-size: 48pt;" text="2048 by Weicheng and Yuan" textAlignment="CENTER" textFill="#906161">
+      <font>
+         <Font name="Helvetica Neue" size="8.0" />
+      </font></Label>
+
+   <!-- Score Display -->
+   <HBox alignment="CENTER" spacing="10">
+      <Label text="Best Score:" />
+      <Label fx:id="bestScoreLabel" style="-fx-font-size: 18pt;" text="0" />
+      <Label text="Score:" />
+      <Label fx:id="scoreLabel" style="-fx-font-size: 18pt;" text="0" />
+      <Label text="Time Left:" />
+      <Label fx:id="timerLabel" style="-fx-font-size: 18pt;" text="" />  <!-- This is the timer label -->
+      <Button fx:id="resetButton" style="-fx-font-size: 12pt;" text="start over" onAction="#resetGame"/>
+   </HBox>
+
+
+
+    <!-- Game Board (4x4 GridPane) -->
+    <GridPane fx:id="gameGrid" hgap="10" style="-fx-background-color: #eee;" vgap="10" alignment="CENTER">
+    </GridPane>
+
+    <!-- Arrow Buttons -->
+    <GridPane alignment="CENTER" hgap="10" vgap="10">
+      <!-- Original arrows -->
+      <Button fx:id="moveUpButton" text="↑" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#up"/>
+      <Button fx:id="moveLeftButton" text="←" GridPane.columnIndex="0" GridPane.rowIndex="1" onAction="#left"/>
+      <Button fx:id="moveDownButton" text="↓" GridPane.columnIndex="1" GridPane.rowIndex="1" onAction="#down"/>
+      <Button fx:id="moveRightButton" text="→" GridPane.columnIndex="2" GridPane.rowIndex="1" onAction="#right"/>
+  
+      <padding>
+         <Insets bottom="10.0" />
+      </padding>
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+  </GridPane>
+</VBox>
